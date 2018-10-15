@@ -4,6 +4,7 @@ Create custom wordpress Popular post feed using query
 
 # Set view post code
 
+```php
 function wpb_set_post_views($postID) {
     $count_key = 'wpb_post_views_count';
     $count = get_post_meta($postID, $count_key, true);
@@ -29,9 +30,10 @@ function wpb_track_post_views ($post_id) {
     wpb_set_post_views($post_id);
 }
 add_action( 'wp_head', 'wpb_track_post_views');
-
+```
 # Creating a function for new custom feed
 
+```php
 function the_new_popular_post_feed() {
     add_feed('popularpost', 'a_new_feed');
 }
@@ -39,3 +41,5 @@ add_action('init', 'the_new_popular_post_feed');
 function a_new_feed() {
     add_filter('pre_option_rss_use_excerpt', '__return_zero');
     load_template( TEMPLATEPATH . '/feeds/popular-feed-template.php' );
+}
+```
