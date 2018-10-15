@@ -1,6 +1,6 @@
 # Custom-wp-feed
 
-Create custom wordpress Popular post feed using query
+Create custom wordpress popular post feed using query. Add following code in your functions.php
 
 # Set view post code
 
@@ -43,3 +43,10 @@ function a_new_feed() {
     load_template( TEMPLATEPATH . '/feeds/popular-feed-template.php' );
 }
 ```
+
+### When you done with functions.php
+
+Create file feeds/popular-feed-template.php. You can get this file in my git.
+
+Once you finished then you can access the url : www.yourdomain.com/feed/popularpost
+
